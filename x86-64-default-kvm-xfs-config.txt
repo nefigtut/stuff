@@ -1,0 +1,40 @@
+Build initail .config file by "make x86_64_defconfig && make kvmconfig"
+make the below adjustments with "make menuconfig"
+
+- Add in-kernel XFS support:
+
+# File systems -> XFS filesystem support
+CONFIG_XFS_FS=y
+# ... -> XFS Quota support
+CONFIG_XFS_QUOTA=y
+# ... -> XFS POSIX ACL support
+CONFIG_XFS_POSIX_ACL=y
+# ... -> XFS Realtime subvolume support
+CONFIG_XFS_RT is not set
+# ... -> XFS Verbose Warnings
+CONFIG_XFS_WARN=y
+# ... -> XFS Debugging support
+CONFIG_XFS_DEBUG is not set
+
+- Disable PTI (not needed on private VMs):
+
+# Security options -> Remove the kernel mapping in user mode
+CONFIG_PAGE_TABLE_ISOLATION is not set
+
+- Add cfg80211 support (for working with WiFi cards):
+
+# Networking support -> Wireless -> cfg80211 - wireless configuration API
+# ... -> cfg80211 wireless extensions compatibility
+CONFIG_CFG80211_WEXT=y
+# ... -> cfg80211 DebugFS entries
+CONFIG_CFG80211_DEBUGFS=y
+
+- Add "iwlwifi" support for the Intel WiFi card
+
+# Device Drivers -> Network device support -> Wireless LAN -> Intel devices
+# ... -> Intel Wireless WiFi Next Gen AGN - Wireless-N/Advanced-N/Ultimate-N (iwlwifi)
+CONFIG_IWLWIFI=m
+# ... -> Intel Wireless WiFi DVM Firmware support
+CONFIG_IWLDVM=m
+# ... -> Intel Wireless WiFi MVM Firmware support
+CONFIG_IWLMVM=m
