@@ -1,0 +1,28 @@
+[user]
+	name = xxx
+	email = xxx@yyy
+[format]
+	signoff = true
+[sendemail]
+	smtpserver = smtp.yyy
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	bra = branch --all -vv
+	st = status
+	c = commit
+	l = log
+[credential]
+	helper = store --file /home/xxx/.gitcreds
+
+# you can use git send-email to place the patch series in the Drafts folder
+# of the specified IMAP server, google mail in this case
+#[imap]
+#  folder = "[Gmail]/Drafts"
+#  host = imaps://imap.gmail.com
+#  user = user@gmail.com
+#  pass = p4ssw0rd
+#  port = 993
+#  sslverify = false
