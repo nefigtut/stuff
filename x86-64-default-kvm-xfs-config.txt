@@ -21,6 +21,10 @@ CONFIG_XFS_DEBUG is not set
 # Security options -> Remove the kernel mapping in user mode
 CONFIG_PAGE_TABLE_ISOLATION is not set
 
+- Disable sound (not needed on VMs):
+# Device Drivers -> Sound card support
+CONFIG_SOUND is not set
+
 - Add cfg80211 support (for working with WiFi cards):
 
 # Networking support -> Wireless -> cfg80211 - wireless configuration API
