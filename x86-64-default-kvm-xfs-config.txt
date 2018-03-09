@@ -22,8 +22,16 @@ CONFIG_XFS_DEBUG is not set
 CONFIG_PAGE_TABLE_ISOLATION is not set
 
 - Disable sound (not needed on VMs):
+
 # Device Drivers -> Sound card support
 CONFIG_SOUND is not set
+
+- Disable i915 support (VMs can have only virtio graphics driver, and may be virtual QXL as fallback)
+
+# Device Drivers -> Graphics support -> Intel 8xx/9xx/G3x/G4x/HD Graphics
+# CONFIG_DRM_I915 is not set
+# Device Drivers -> Graphics support -> QXL virtual GPU
+# CONFIG_DRM_QXL=y
 
 - Add cfg80211 support (for working with WiFi cards):
 
