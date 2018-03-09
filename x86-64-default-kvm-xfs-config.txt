@@ -29,9 +29,13 @@ CONFIG_SOUND is not set
 - Disable i915 support (VMs can have only virtio graphics driver, and may be virtual QXL as fallback)
 
 # Device Drivers -> Graphics support -> Intel 8xx/9xx/G3x/G4x/HD Graphics
-# CONFIG_DRM_I915 is not set
+CONFIG_DRM_I915 is not set
 # Device Drivers -> Graphics support -> QXL virtual GPU
-# CONFIG_DRM_QXL=y
+CONFIG_DRM_QXL=y
+
+- Enable user namespaces (check that all other namespaces are enabled too)
+# General setup -> Namespaces support -> User namespace
+CONFIG_USER_NS=y
 
 - Add cfg80211 support (for working with WiFi cards):
 
