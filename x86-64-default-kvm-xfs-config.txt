@@ -21,6 +21,11 @@ CONFIG_XFS_DEBUG is not set
 # Security options -> Remove the kernel mapping in user mode
 CONFIG_PAGE_TABLE_ISOLATION is not set
 
+- Disable security modules (not needed on private VMs):
+
+# Security options -> Enable different security models
+CONFIG_SECURITY is not set
+
 - Disable sound (not needed on VMs):
 
 # Device Drivers -> Sound card support
