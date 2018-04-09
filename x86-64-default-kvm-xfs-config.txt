@@ -21,6 +21,11 @@ CONFIG_XFS_DEBUG is not set
 # Security options -> Remove the kernel mapping in user mode
 CONFIG_PAGE_TABLE_ISOLATION is not set
 
+- Disable retpolines (not needed on private VMs):
+
+# Processor type and features -> Avoid speculative indirect branches in kernel
+CONFIG_RETPOLINE is not set
+
 - Disable security modules (not needed on private VMs):
 
 # Security options -> Enable different security models
@@ -39,6 +44,7 @@ CONFIG_DRM_I915 is not set
 CONFIG_DRM_QXL=y
 
 - Enable user namespaces (check that all other namespaces are enabled too)
+
 # General setup -> Namespaces support -> User namespace
 CONFIG_USER_NS=y
 
