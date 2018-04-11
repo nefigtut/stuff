@@ -14,6 +14,7 @@
 	st = status
 	c = commit
 	l = log
+	s = show
 [credential]
 	helper = store --file /home/xxx/.gitcreds
 
