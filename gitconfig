@@ -17,6 +17,7 @@
 	s = show
 [credential]
 	helper = store --file /home/xxx/.gitcreds
+	helper = cache --timeout 30000
 
 # you can use git send-email to place the patch series in the Drafts folder
 # of the specified IMAP server, google mail in this case
