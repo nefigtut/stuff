@@ -43,6 +43,11 @@ CONFIG_DRM_I915 is not set
 # Device Drivers -> Graphics support -> QXL virtual GPU
 CONFIG_DRM_QXL=y
 
+- Disable Intel NICs e100/e1000/e1000e/etc ((VMs can have only virtio-net driver)
+
+# Device Drivers -> Network device support -> Ethernet driver support -> Intel devices
+CONFIG_NET_VENDOR_INTEL is not set
+
 - Enable user namespaces (check that all other namespaces are enabled too)
 
 # General setup -> Namespaces support -> User namespace
