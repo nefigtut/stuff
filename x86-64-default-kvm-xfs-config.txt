@@ -36,19 +36,34 @@ CONFIG_SECURITY is not set
 # Device Drivers -> Sound card support
 CONFIG_SOUND is not set
 
-- Disable i915 support (VMs can have only virtio graphics driver, and may be virtual QXL as fallback)
+- Disable i915 support (VMs can have only virtio graphics driver, and may be virtual QXL as fallback):
 
 # Device Drivers -> Graphics support -> Intel 8xx/9xx/G3x/G4x/HD Graphics
 CONFIG_DRM_I915 is not set
 # Device Drivers -> Graphics support -> QXL virtual GPU
 CONFIG_DRM_QXL=y
 
-- Disable Intel NICs e100/e1000/e1000e/etc ((VMs can have only virtio-net driver)
+- Enable VETH driver:
 
-# Device Drivers -> Network device support -> Ethernet driver support -> Intel devices
-CONFIG_NET_VENDOR_INTEL is not set
+# Device Drivers -> Network device support -> Virtual ethernet pair device
+CONFIG_VETH=y
 
-- Enable user namespaces (check that all other namespaces are enabled too)
+- Disable physical ethernet cards (not needed, VMs can have only virtio-net driver):
+
+# Device Drivers -> Network device support -> Ethernet driver support
+CONFIG_ETHERNET is not set
+
+- Disable physical FDDI cards (not needed on VMs):
+
+# Device Drivers -> Network device support -> FDDI driver support
+CONFIG_FDDI is not set
+
+- Disable physical WiFi cards (not needed on VMs):
+
+# Device Drivers -> Network device support -> Wireless LAN
+CONFIG_WLAN is not set
+
+- Enable user namespaces (check that all other namespaces are enabled too):
 
 # General setup -> Namespaces support -> User namespace
 CONFIG_USER_NS=y
@@ -61,7 +76,7 @@ CONFIG_CFG80211_WEXT=y
 # ... -> cfg80211 DebugFS entries
 CONFIG_CFG80211_DEBUGFS=y
 
-- Add "iwlwifi" support for the Intel WiFi card
+- Add "iwlwifi" support for the Intel WiFi card:
 
 # Device Drivers -> Network device support -> Wireless LAN -> Intel devices
 # ... -> Intel Wireless WiFi Next Gen AGN - Wireless-N/Advanced-N/Ultimate-N (iwlwifi)
